@@ -1,6 +1,5 @@
 package ru.netology.delivery.test;
 
-
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -37,9 +36,9 @@ public class CardDeliveryTest {
     void shouldSuccessfulPlanMeeting() {
         DataGenerator.User validUser = DataGenerator.Registration.generateUser("ru");
         int addDaysForFirstMeeting = 4;
-        String firstMeetingDate = DataGenerator.generateData(addDaysForFirstMeeting);
+        String firstMeetingDate = DataGenerator.generateDate(addDaysForFirstMeeting); // Исправлено
         int addDaysForSecondMeeting = 6;
-        String secondMeetingDate = DataGenerator.generateData(addDaysForSecondMeeting);
+        String secondMeetingDate = DataGenerator.generateDate(addDaysForSecondMeeting);
         $("[data-test-id='city'] input").setValue(validUser.getCity());
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id='date'] input").setValue(firstMeetingDate);
