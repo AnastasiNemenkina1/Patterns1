@@ -1,5 +1,8 @@
+
 package ru.netology.delivery.test;
 
+import ru.netology.delivery.data.DataGenerator;
+import ru.netology.delivery.data.DataGenerator.User;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
