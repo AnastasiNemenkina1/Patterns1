@@ -42,8 +42,8 @@ public class DataGenerator {
 
     @Value
     public static class User {
-        String city;
-        String name;
-        String phone;
+        String City;
+        String Name;
+        String Phone;
     }
 }

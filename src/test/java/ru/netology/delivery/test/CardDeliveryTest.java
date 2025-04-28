@@ -42,11 +42,11 @@ public class CardDeliveryTest {
         String firstMeetingDate = DataGenerator.generateDate(addDaysForFirstMeeting); // Исправлено
         int addDaysForSecondMeeting = 6;
         String secondMeetingDate = DataGenerator.generateDate(addDaysForSecondMeeting);
-        $("[data-test-id='city'] input").setValue(validUser.getcity());
+        $("[data-test-id='city'] input").setValue(validUser.getCity());
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id='date'] input").setValue(firstMeetingDate);
-        $("[data-test-id='name'] input").setValue(validUser.getname());
-        $("[data-test-id='phone'] input").setValue(validUser.getphone());
+        $("[data-test-id='name'] input").setValue(validUser.getName());
+        $("[data-test-id='phone'] input").setValue(validUser.getPhone());
         $("[data-test-id='agreement']").click();
         $(byText("Запланировать")).click();
         $(byText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
