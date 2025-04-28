@@ -46,7 +46,7 @@ public class CardDeliveryTest {
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id='date'] input").setValue(firstMeetingDate);
         $("[data-test-id='name'] input").setValue(validUser.getName());
-        $("[data-test-id='phone'] input").setValue(validUser.getPhoneNumber());
+        $("[data-test-id='phone'] input").setValue(validUser.getphone());
         $("[data-test-id='agreement']").click();
         $(byText("Запланировать")).click();
         $(byText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
