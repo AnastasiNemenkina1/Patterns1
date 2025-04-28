@@ -1,4 +1,3 @@
-
 package ru.netology.delivery.test;
 
 import ru.netology.delivery.data.DataGenerator;

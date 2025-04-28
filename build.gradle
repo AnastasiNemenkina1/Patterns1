@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'io.freefair.lombok' version '8.4'
+    id 'io.qameta.allure' version '2.12.0' // Добавлен плагин Allure
 }
 
 group 'ru.netology'
@@ -18,9 +19,11 @@ repositories {
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
-    testImplementation 'com.codeborne:selenide:6.19.1'
+    testImplementation 'com.codeborne:selenide:6.16.0'
     testImplementation 'com.github.javafaker:javafaker:1.0.2'
     testImplementation 'io.qameta.allure:allure-selenide:2.24.0'
+    testImplementation 'io.qameta.allure:allure-junit5:2.24.0'
+    testImplementation 'org.aspectj:aspectjweaver:1.9.22'
 
     compileOnly 'org.projectlombok:lombok:1.18.30'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
@@ -31,4 +34,17 @@ dependencies {
 test {
     useJUnitPlatform()
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+    systemProperty 'allure.results.directory', 'build/allure-results'
+    systemProperty 'junit.jupiter.extensions.autodetection.enabled', 'true'
+}
+
+allure {
+    version = '2.24.0'
+    adapter {
+        frameworks {
+            junit5 {
+                adapterVersion = '2.24.0'
+            }
+        }
+    }
 }
